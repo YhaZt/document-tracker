@@ -7,25 +7,25 @@ import Link from "next/link";
 
 const ChangePassword = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-100 via-white to-blue-300 py-8">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-300 via-white to-blue-600 py-10">
       <Card
-        className="w-full max-w-lg shadow-2xl rounded-2xl border-0"
+        className="w-full max-w-md shadow-2xl rounded-2xl border-0 backdrop-blur-lg"
         styles={{ body: { padding: "2.5rem 2rem" } }}
-        style={{ background: "rgba(255,255,255,0.95)" }}
+        style={{ background: "rgba(255,255,255,0.98)" }}
       >
         <div className="flex flex-col items-center mb-8">
-          <div className="bg-blue-500 rounded-full p-4 mb-3 shadow-lg">
+          <div className="bg-gradient-to-tr from-blue-600 to-blue-400 rounded-full p-5 mb-4 shadow-xl">
             <LockOutlined className="text-5xl text-white" />
           </div>
-          <Typography.Title level={2} className="!mb-0 !font-extrabold text-center text-gray-800 drop-shadow-lg">
+          <Typography.Title level={1} className="!mb-0 !font-extrabold text-center text-gray-900 drop-shadow-xl">
             Change Password
           </Typography.Title>
-          <Typography.Text className="text-center text-gray-500 mt-2">
+          <Typography.Text className="text-center text-gray-500 mt-3 text-lg">
             Update your password for enhanced security.
           </Typography.Text>
         </div>
-        <Divider className="!my-6" />
-        <Form layout="vertical" size="large" className="space-y-2">
+        <Divider className="!my-8" />
+        <Form layout="vertical" size="large" className="space-y-3">
           <Form.Item
             label={<span className="font-semibold text-base">Current Password <span className="text-red-500">*</span></span>}
             name="currentPassword"
@@ -36,7 +36,7 @@ const ChangePassword = () => {
               placeholder="Current password"
               className="rounded-lg"
               autoComplete="current-password"
-              allowClear
+              allowClear={false}
               visibilityToggle
             />
           </Form.Item>
@@ -50,7 +50,7 @@ const ChangePassword = () => {
               placeholder="New password"
               className="rounded-lg"
               autoComplete="new-password"
-              allowClear
+              allowClear={false}
               visibilityToggle
             />
           </Form.Item>
@@ -64,7 +64,7 @@ const ChangePassword = () => {
               placeholder="Repeat new password"
               className="rounded-lg"
               autoComplete="new-password"
-              allowClear
+              allowClear={false}
               visibilityToggle
             />
           </Form.Item>
@@ -74,13 +74,13 @@ const ChangePassword = () => {
               htmlType="submit"
               block
               size="large"
-              className="font-bold text-lg rounded-lg bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 shadow-md border-0"
+              className="font-bold text-lg rounded-lg bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 shadow-lg border-0"
             >
               Change Password
             </Button>
           </Form.Item>
         </Form>
-        <Divider className="!my-6" />
+        <Divider className="!my-8" />
         <div className="text-center">
           <Link href="/Account/login" className="text-blue-600 hover:underline font-semibold">
             Back to Login

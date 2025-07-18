@@ -7,25 +7,25 @@ import Link from "next/link";
 
 const Register = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-100 via-white to-blue-300 py-8">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-400 via-white to-blue-700 py-12">
       <Card
-        className="w-full max-w-lg shadow-2xl rounded-2xl border-0"
-        styles={{ body: { padding: "2.5rem 2rem" } }}
-        style={{ background: "rgba(255,255,255,0.95)" }}
+        className="w-full max-w-lg shadow-2xl rounded-2xl border-0 backdrop-blur-lg"
+        styles={{ body: { padding: "3rem 2.5rem" } }}
+        style={{ background: "rgba(255,255,255,0.99)" }}
       >
-        <div className="flex flex-col items-center mb-8">
-          <div className="bg-blue-500 rounded-full p-4 mb-3 shadow-lg">
-            <UserAddOutlined className="text-5xl text-white" />
+        <div className="flex flex-col items-center mb-10">
+          <div className="bg-gradient-to-tr from-blue-600 to-blue-400 rounded-full p-6 mb-5 shadow-2xl">
+            <UserAddOutlined className="text-7xl text-white" />
           </div>
-          <Typography.Title level={2} className="!mb-0 !font-extrabold text-center text-gray-800 drop-shadow-lg">
+          <Typography.Title level={1} className="!mb-0 !font-extrabold text-center text-gray-900 drop-shadow-2xl">
             Create your account
           </Typography.Title>
-          <Typography.Text className="text-center text-gray-500 mt-2">
+          <Typography.Text className="text-center text-gray-500 mt-4 text-lg">
             Join our platform and experience a modern, secure dashboard.
           </Typography.Text>
         </div>
-        <Divider className="!my-6" />
-        <Form layout="vertical" size="large" className="space-y-2">
+        <Divider className="!my-10" />
+        <Form layout="vertical" size="large" className="space-y-4">
           <Form.Item
             label={<span className="font-semibold text-base">Full Name <span className="text-red-500">*</span></span>}
             name="fullName"
@@ -34,9 +34,9 @@ const Register = () => {
           >
             <Input
               placeholder="Your full name"
-              className="rounded-lg"
+              className="rounded-lg border-2 border-blue-200 focus:border-blue-500"
               autoComplete="name"
-              allowClear
+              allowClear={false}
             />
           </Form.Item>
           <Form.Item
@@ -47,9 +47,9 @@ const Register = () => {
           >
             <Input
               placeholder="you@email.com"
-              className="rounded-lg"
+              className="rounded-lg border-2 border-blue-200 focus:border-blue-500"
               autoComplete="email"
-              allowClear
+              allowClear={false}
             />
           </Form.Item>
           <Form.Item
@@ -60,9 +60,9 @@ const Register = () => {
           >
             <Input.Password
               placeholder="Create a password"
-              className="rounded-lg"
+              className="rounded-lg border-2 border-blue-200 focus:border-blue-500"
               autoComplete="new-password"
-              allowClear
+              allowClear={false}
               visibilityToggle
             />
           </Form.Item>
@@ -74,9 +74,9 @@ const Register = () => {
           >
             <Input.Password
               placeholder="Repeat your password"
-              className="rounded-lg"
+              className="rounded-lg border-2 border-blue-200 focus:border-blue-500"
               autoComplete="new-password"
-              allowClear
+              allowClear={false}
               visibilityToggle
             />
           </Form.Item>
@@ -86,12 +86,19 @@ const Register = () => {
               htmlType="submit"
               block
               size="large"
-              className="font-bold text-lg rounded-lg bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 shadow-md border-0"
+              className="font-bold text-lg rounded-lg bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 shadow-xl border-0"
             >
               Register
             </Button>
           </Form.Item>
         </Form>
+        <Divider className="!my-10" />
+        <div className="text-center">
+          <span className="text-gray-600 text-base">Already have an account?</span>
+          <Link href="/Account/login" className="text-blue-600 hover:underline font-semibold ml-2">
+            Login
+          </Link>
+        </div>
       </Card>
     </div>
   );
