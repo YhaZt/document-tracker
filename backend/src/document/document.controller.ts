@@ -23,8 +23,14 @@ export class DocumentController {
     return this.documentService.handleUpload(file, { ...body, sender_name });
   }
 
+  // Debug route to check if controller is working
+  @Get('ping')
+  ping() {
+    return { message: 'DocumentController is working' };
+  }
+
   @UseGuards(require('../auth/jwt-auth.guard').JwtAuthGuard)
-  @Get()
+  @Get('all')
   async getAllDocuments(@Req() req: Request) {
     // Optionally, filter by user: req.user
     return this.documentService.getAllDocuments();
